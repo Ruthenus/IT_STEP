@@ -1,0 +1,103 @@
+
+body {
+    background-color: whitesmoke;
+}
+
+/* Зовнішній вигляд панельки – награвся з полями та відступами.  */
+.REF615 {
+    background-color: antiquewhite;
+    max-height: 750px;
+    width: 420px;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+}
+
+/* Зовнішній вигляд світлодіодних табло — в реальності зовсім не так... */
+.REF615>p {
+    color: #01263a;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: center;
+    background-color: #a7aaad;
+    border: 10px solid #a7aaad;
+    border-radius: 30px;
+    height: 28px;
+    width: 270px;
+    opacity: 0.4;
+    margin-left: 53px;
+    user-select: none;
+}
+
+/* Наведіть курсор, щоб підсвітити. */
+.REF615>p:hover {
+    opacity: 1.0;
+}
+
+.REF615>p.alarm {
+    background-color: #CC0000;
+    border: 10px solid  #CC0000;
+    opacity: 1.0;
+}
+
+.REF615>p.ok {
+    background-color: #66FF00;
+    border: 10px solid #66FF00;
+    opacity: 1.0;
+}
+
+/* https://denis-creative.com/effekt-miganiya-s-pomoshhyu-animation/ */
+.REF615>p.trip {
+/* Блінкер – то вказівне реле: випав блінкер. */
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 2s;
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration: 2s;
+}
+   
+  @keyframes blinker {
+    from { opacity: 1.0; background-color: #CC0000; border: 10px solid  #CC0000;}
+    to { opacity: 0.2; }
+  }
+   
+  @-webkit-keyframes blinker {
+    from { opacity: 1.0; background-color: #CC0000; border: 10px solid  #CC0000;}
+    to { opacity: 0.2; }
+  }
+
+/* Повністю зупиніть це, застосувавши javascript, або затисніть ЛКМ */
+p.trip:active {
+    animation: none !important;
+    -webkit-animation: none;
+}
+
+/* Нехай простить шведсько-швейцарсько-китайська корпорація. */
+.ABB {
+    margin-top: -780px;
+    color: #FF2400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 48px;
+    font-weight: bolder;
+    line-height: 0.5;
+    margin-left: 30px;
+    user-select: none;  
+}
+
+/* Реалізував переміщення вниз у повноекранному режимі. */
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-left: 870px;
+    text-align: right;
+    line-height: 0.2;
+    font-family: 'Courier New', Courier, monospace;
+}
