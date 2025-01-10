@@ -1,0 +1,167 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body:has(main > section.instagram) {
+    background: radial-gradient(circle, #E6E6FA, white);
+}
+
+main.sel_video {
+    background-image: url('../images/background_sel_video.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 400vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1002;
+    background-color:#003a5d;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+header h1 img {
+    margin-left: 70px;
+    margin-right: 100px;
+    height: 100%;
+}
+
+header nav {
+    padding: 0;
+    margin-top: 18px;
+    margin-bottom: 21px;
+    margin-left: 70px;
+    z-index: 1000;
+    /* align-items: center; */  
+    color: white;
+    font-size: large;
+    letter-spacing: 0.04em;
+}
+
+header nav div {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav a {
+    margin-right: 20px;
+    transition: transform 0.1s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+header nav a:hover {
+    transform: scale(1.2) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+    color: white;
+}
+
+header nav a:active {
+    transform: scaleX(-1) !important;
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    margin-top: 195px;
+    margin-bottom: 100px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #003a5d;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    text-align: center;
+    line-height: 0.2;
+    z-index: 800;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.instagram {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+   /* background: radial-gradient(circle, yellow, white);*/
+}
+    
+.instagram img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    box-shadow: 7px 7px 0 rgba(0, 58, 93, 0.3);
+    border-radius: 12px;
+    position: relative;
+    z-index: 500;
+}
+
+.instagram img:hover {
+   transform: scale(1.3) rotate(5deg);
+   transition: transform 0.5s ease;
+   box-shadow: none;
+   z-index: 1500; /* щоб край не закривався футером чи хедером */
+}
+
+section.youtube {
+    width: 61.8vw;
+    height: auto;
+    margin-top: 200px;
+}
+
+.youtube iframe {
+    width: 100%;
+    max-width: 1280px;
+    max-height: 720px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 90px;
+}
