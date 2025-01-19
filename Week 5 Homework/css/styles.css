@@ -1,0 +1,377 @@
+
+:root {
+    --side: 160px;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body:has(main > section.instagram) {
+    background: radial-gradient(circle, #E6E6FA, white);
+}
+
+main.sel_video {
+    background-image: url('../images/background_sel_video.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 400vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main.sel_hyperlinks {
+    background-image: url('../images/20220513_185611.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 55% 45%;
+    background-size: cover;
+    height: 95vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    /*gap: var(--side);*/
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1002;
+    background-color:#003a5d;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+header h1 img {
+    margin-left: 70px;
+    margin-right: 100px;
+    height: 100%;
+}
+
+header nav {
+    padding: 0;
+    margin-top: 18px;
+    margin-bottom: 21px;
+    margin-left: 70px;
+    z-index: 1000;
+    /* align-items: center; */  
+    color: white;
+    font-size: large;
+    letter-spacing: 0.04em;
+}
+
+header nav div {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav a {
+    margin-right: 50px;
+    transition: transform 0.1s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+header nav a:hover {
+    transform: scale(1.2) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+    color: white;
+}
+
+header nav a:active {
+    transform: scaleX(-1) !important;
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    margin-top: 195px;
+    margin-bottom: 100px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #003a5d;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    text-align: center;
+    line-height: 0.2;
+    z-index: 800;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.instagram {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+   /* background: radial-gradient(circle, yellow, white);*/
+}
+    
+.instagram img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    box-shadow: 7px 7px 0 rgba(0, 58, 93, 0.3);
+    border-radius: 12px;
+    position: relative;
+    z-index: 500;
+}
+
+.instagram img:hover {
+   transform: scale(1.3) rotate(5deg);
+   transition: transform 0.5s ease;
+   box-shadow: none;
+   z-index: 1500; /* щоб край не закривався футером чи хедером */
+}
+
+section.youtube {
+    width: 61.8vw;
+    height: auto;
+    margin-top: 200px;
+}
+
+.youtube iframe {
+    width: 100%;
+    max-width: 1280px;
+    max-height: 720px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 90px;
+}
+
+section.animation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*gap: var(--side);*/
+    justify-items: center;
+    align-items: center;
+    margin-top: 7vh;
+    margin-left: 52vw;
+    position: relative;
+}
+
+.hyperlink_1,
+.hyperlink_2,
+.hyperlink_3,
+.hyperlink_4,
+.hyperlink_5,
+.hyperlink_6,
+.hyperlink_7 {
+    width: var(--side);
+    aspect-ratio: 1;
+    transform: translate(calc(-2 * var(--side)), calc(2 * var(--side)));
+    animation: l14 15s infinite alternate-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hyperlink_text {
+    font-size: larger;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: oblique;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    top: -50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    animation: flicker 0.3s infinite alternate;
+}
+
+.hyperlinks_row {
+    display: contents;
+}
+
+.hyperlink_1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.hyperlink_2 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.hyperlink_1 .hyperlink_text,
+.hyperlink_2 .hyperlink_text {
+    font-size: x-large;
+}
+
+.hyperlink_3 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.hyperlink_4 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.hyperlink_5 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.hyperlink_6 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.hyperlink_7 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+/* https://css-loaders.com/colorful/ */
+@keyframes l14 {
+    0% {
+        box-shadow:
+            calc(var(--side)) calc(-1 * var(--side)) #B5AC01,
+            calc(var(--side)) calc(-1 * var(--side)) #ECBA09,
+            calc(var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #0000
+    }
+    25% {
+        box-shadow:
+            calc(2 * var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #ECBA09,
+            calc(var(--side)) calc(-1 * var(--side)) #E86E1C,
+            calc(var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #0000
+    }
+    50% {
+        box-shadow:
+            calc(2 * var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-2 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #E86E1C,
+            calc(var(--side)) calc(-1 * var(--side)) #D41E45,
+            calc(var(--side)) calc(-1 * var(--side)) #0000
+    }
+    75% {
+        box-shadow:
+            calc(2 * var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-2 * var(--side)) #0000,
+            0 calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #D41E45,
+            calc(var(--side)) calc(-1 * var(--side)) #B5AC01
+    }
+    100% {
+        box-shadow:
+            calc(2 * var(--side)) calc(-1 * var(--side)) #0000,
+            calc(var(--side)) calc(-2 * var(--side)) #0000,
+            0 calc(-1 * var(--side)) #0000,
+            calc(var(--side)) 0 #0000,
+            calc(var(--side)) calc(-1 * var(--side)) #B5AC01
+    }
+}
+
+.hyperlink_1:hover,
+.hyperlink_2:hover,
+.hyperlink_3:hover,
+.hyperlink_4:hover,
+.hyperlink_5:hover,
+.hyperlink_6:hover,
+.hyperlink_7:hover {
+    animation: l14 15s infinite alternate-reverse, pulse 0.3s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(calc(-2 * var(--side)), calc(2 * var(--side))) scale(1);
+    }
+    25% {
+        transform: translate(calc(-2 * var(--side)), calc(2 * var(--side))) scale(1.2);
+    }
+    50% {
+        transform: translate(calc(-2 * var(--side)), calc(2 * var(--side))) scale(0.9);
+    }
+    75% {
+        transform: translate(calc(-2 * var(--side)), calc(2 * var(--side))) scale(1.1);
+    }
+    100% {
+        transform: translate(calc(-2 * var(--side)), calc(2 * var(--side))) scale(1);
+    }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 50px #00ffff, 
+                     0 0 100px #00ffff, 0 0 150px #00ffff, 0 0 200px #00ffff, 0 0 250px #00ffff;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px #fff, 0 0 10px #00ffff;
+    }
+    22%, 53% {
+        opacity: 0.2;
+        text-shadow: 0 0 2px #fff, 0 0 5px #00ffff;
+    }
+}
+
+
+
+
+
+  
+
+
