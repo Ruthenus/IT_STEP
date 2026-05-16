@@ -1,0 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace WebApi_Application.Models
+{
+    public class UsersContext : DbContext
+    {
+        public DbSet<User> Users { get; set; }
+
+        public UsersContext(DbContextOptions<UsersContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
+    }
+}
